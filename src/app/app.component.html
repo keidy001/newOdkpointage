@@ -33,11 +33,15 @@
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default animated jello">
-                        <li>
+                        <li *ngIf="userRole == 1 || userRole == 2">
                             <a href="/profile">
                                 <i class="icon-user"></i> Profile </a>
                         </li>
-
+                        
+                        <li *ngIf="userRole == 'APPRENANT'">
+                            <a href="/userProfile">
+                                <i class="icon-user"></i> Profile </a>
+                        </li>
                         <li>
                             <a (click)="logOut()">
                                 <i class="icon-logout"></i>Déconnexion</a>
@@ -169,12 +173,12 @@
                         </a>
                     </li>
               
-                    <li class="nav-item" *ngIf="userRole == 'APPRENANT'">
+                    <!-- <li class="nav-item" *ngIf="userRole == 'APPRENANT'">
                         <a href="/groupe" class="nav-link nav-toggle">
                           <i class="material-icons">group</i>
                             <span class="title">Groupe</span>
                         </a>
-                    </li>
+                    </li> -->
                   
                 <li class="nav-item" *ngIf="userRole == 'APPRENANT'">
                     <a href="userPromotion/{{loginData?.promotion?.id}}" class="nav-link nav-toggle">

@@ -38,6 +38,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AddPromotionComponent } from './promotion/add-promotion/add-promotion.component';
 import { DetailPromotionComponent } from './promotion/detail-promotion/detail-promotion.component';
 import { DetailPointageComponent } from './PointageAdministrateur/detail-pointage/detail-pointage.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 
@@ -71,6 +72,7 @@ import { DetailPointageComponent } from './PointageAdministrateur/detail-pointag
     UserPromotionComponent,
     GroupeComponent,
     DetailPointageComponent,
+    UserProfileComponent,
     
 
  

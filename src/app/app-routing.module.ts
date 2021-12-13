@@ -27,6 +27,8 @@ import { AddPromotionComponent } from './promotion/add-promotion/add-promotion.c
 import { DetailPromotionComponent } from './promotion/detail-promotion/detail-promotion.component';
 import { AdminGuard } from './admin.guard';
 import { LoginGuard } from './login.guard';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+
 
 
 
@@ -38,8 +40,8 @@ const routes: Routes = [
   { path: 'listUsers',component:ListUsersComponent,canActivate:[AdminGuard]},
   { path: 'addUsers', component:AddUsersComponent,canActivate:[AdminGuard]},
   { path: 'addAdmin',component:AddAdminComponent,canActivate:[AdminGuard]},
-  {path: 'addPromotion',component:AddPromotionComponent,canActivate:[AdminGuard]},
-  {path: 'detailPromotion/:id',component:DetailPromotionComponent,canActivate:[GuardGuard]},
+  { path: 'addPromotion',component:AddPromotionComponent,canActivate:[AdminGuard]},
+  { path: 'detailPromotion/:id',component:DetailPromotionComponent,canActivate:[GuardGuard]},
   { path: 'listPromotion',component:ListePromotionComponent,canActivate:[AdminGuard]},
   { path: 'updatePromotion/:id',component:UpdatePromotionComponent,canActivate:[AdminGuard]},
   { path: 'detailAdmin/:id',component:DetailAdminComponent,canActivate:[AdminGuard]},
@@ -57,6 +59,7 @@ const routes: Routes = [
   { path: 'profile', component:ProfileComponent,canActivate:[AdminGuard]},
   { path: 'userPromotion/:id', component:UserPromotionComponent,canActivate:[GuardGuard]},
   { path: 'groupe', component:GroupeComponent, canActivate:[GuardGuard]},
+  { path: 'userProfile',component:UserProfileComponent, canActivate:[GuardGuard]},
   { path: '**', redirectTo: '/login', pathMatch:'full'},
  
 ];

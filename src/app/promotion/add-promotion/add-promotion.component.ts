@@ -36,9 +36,7 @@ export class AddPromotionComponent implements OnInit {
       dateFin: ['', Validators.required],
       horaireDebutJournee: ['', Validators.required],
       horaireFinJournee: ['', Validators.required],
-      nom: ['', Validators.required],
-      nombreFemmes: ['', Validators.required],
-      nombreHommes: ['', Validators.required],
+      nom: ['', Validators.required]
 
       //confirmPassword: ['', Validators.required],
       //acceptTerms: [false, Validators.requiredTrue] //Checkbox For accept conditions 
