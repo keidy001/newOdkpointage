@@ -41,6 +41,7 @@ import { DetailPointageComponent } from './PointageAdministrateur/detail-pointag
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { OrderModule } from 'ngx-order-pipe';
 import { CorbeilleComponent } from './corbeille/corbeille.component';
+import { NgxPaginationModule } from 'ngx-pagination'; 
 
 
 
@@ -89,8 +90,8 @@ import { CorbeilleComponent } from './corbeille/corbeille.component';
     ReactiveFormsModule,
     Ng2SearchPipeModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
-
+    ToastrModule.forRoot(),
+    NgxPaginationModule
     
     
 

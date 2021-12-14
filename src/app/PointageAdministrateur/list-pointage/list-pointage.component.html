@@ -17,12 +17,9 @@
 			<div class="col-lg-3 col-md-6 col-sm-12 col-12">
 
 				<div class="card" (click)="listerPointage()">
-					<div class="panel-body">
+					<div class="panel-body1">
 						<h3> Tous les pointages</h3>
-						<div class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active">
-							<div class="progress-bar progress-bar-purple width-100" role="progressbar" aria-valuenow="52"
-								aria-valuemin="0" aria-valuemax="100"></div>
-						</div>
+						
 						<span class="text-small margin-top-10 full-width"></span>
 					</div>
 				</div>
@@ -35,10 +32,7 @@
 
 						<input type="date" [(ngModel)]="date" name="date">
 						<button class="button" (click)="listJour(date)">Valider</button> <br>
-						<div class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active">
-							<div class="progress-bar progress-bar-purple width-100" role="progressbar"
-								aria-valuenow="52" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>
+						
 
 						<span class="text-small margin-top-10 full-width"></span>
 					</div>
@@ -50,11 +44,8 @@
 					<div class="panel-body">
 						<h3>Liste par semaine</h3>
 						<input type="date" [(ngModel)]="date" name="date">
-						<button (click)="listSemaine(date)">Valider</button> <br>
-						<div class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active">
-							<div class="progress-bar progress-bar-purple width-100" role="progressbar"
-								aria-valuenow="52" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>
+						<button class="button" (click)="listSemaine(date)">Valider</button> <br>
+					
 						<span class="text-small margin-top-10 full-width"></span>
 					</div>
 				</div>
@@ -64,11 +55,8 @@
 					<div class="panel-body">
 						<h3>Liste par mois</h3>
 						<input type="date" [(ngModel)]="date" name="date">
-						<button (click)="listMois(date)">Valider</button> <br>
-						<div class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active">
-							<div class="progress-bar progress-bar-cyan width-100" role="progressbar" aria-valuenow="56"
-								aria-valuemin="0" aria-valuemax="100"></div>
-						</div>
+						<button class="button" (click)="listMois(date)">Valider</button> <br>
+						
 						<span class="text-small margin-top-10 full-width"></span>
 					</div>
 				</div>
@@ -117,6 +105,7 @@
 							</div>
 						</div>
 						<div class="table-scrollable">
+							<pagination-controls (pageChange)="p = $event"></pagination-controls>
 							<header style="text-align: center;">Liste des pointages</header>
 							<table class="table table-hover table-checkable order-column full-width" id="example4">
 								<thead>
@@ -131,7 +120,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr class="odd gradeX" *ngFor="let Pointage of listPointage">
+									<tr class="odd gradeX" *ngFor="let Pointage of listPointage | filter:searchText | paginate : {itemsPerPage : 5, currentPage: p}">
 										<td class="user-circle-img">
 											<img src="../../../assets/images/odk_icon.png" width="50px" alt="">
 										</td>

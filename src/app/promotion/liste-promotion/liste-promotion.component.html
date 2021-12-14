@@ -45,6 +45,7 @@
 										
 									</div>
 									<div class="table-scrollable">
+										<pagination-controls (pageChange)="p = $event"></pagination-controls>
                                         <header style="text-align: center;"> Liste des Promotions</header>
 									<table class="table table-hover table-checkable order-column full-width" id="example4">
 										<thead>
@@ -60,7 +61,7 @@
 											</tr>
 										</thead>
 										<tbody >
-											<tr class="odd gradeX" *ngFor="let promo of listPromotion"  >
+											<tr class="odd gradeX" *ngFor="let promo of listPromotion | filter:searchText | paginate : {itemsPerPage : 5, currentPage: p}"  >
 												<td class="user-circle-img">
 														<img src="../../../assets/images/odk_icon.png" width="50px" alt="">
 												</td>

@@ -13,6 +13,7 @@ import * as printJS from 'print-js';
   styleUrls: ['./list-admin.component.css']
 })
 export class ListAdminComponent implements OnInit {
+p: number = 1;
 listAdmin:any =[];
 loginData : any;
 searchText: any;

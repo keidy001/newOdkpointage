@@ -45,6 +45,7 @@
 							</div>
 						</div>
 						<div class="table-scrollable">
+							<pagination-controls (pageChange)="p = $event"></pagination-controls>
 							<header style="text-align: center;">Liste des Utlisateurs</header>
 							<table class="table table-hover table-checkable order-column full-width" id="example4">
 								<thead>
@@ -59,8 +60,9 @@
 										<th class="action"> Action </th>
 									</tr>
 								</thead>
-								<tbody *ngFor="let users of listUsers | filter:searchText">
-									<tr class="odd gradeX" *ngIf= "users.supprimer==0" >
+								<tbody *ngFor="let users of listUsers | filter:searchText | paginate : {itemsPerPage : 5, currentPage: p}" >
+									<tr class="odd gradeX" *ngIf= "users.supprimer==0"  >
+									
 										<td class="user-circle-img">
 											<img src="../../../assets/images/odk_icon.png" width="50px" alt="">
 										</td>
@@ -74,8 +76,8 @@
 										<td class="center"> <span
 												routerLink="/detailUser/{{users.id}}">{{users.Type}}</span></td>
 												<td class="td">
-													<span *ngIf="users.etat==='ACTIVER'"><img title="ACTIVER" src="../../../assets/images/puissance.png" width="40px" alt=""> </span>
-													<span *ngIf="users.etat==='DESACTIVER'"><img title="DESACTIVER" src="../../../assets/images/puissance1.png" width="40px" alt=""> </span>
+													<span *ngIf="users.etat==='ACTIVER'"><img title="ACTIVER" src="../../../assets/images/puissance.png" width="30px" alt=""> </span>
+													<span *ngIf="users.etat==='DESACTIVER'"><img title="DESACTIVER" src="../../../assets/images/puissance1.png" width="30px" alt=""> </span>
 													
 													</td>
 										<td class="td">
@@ -87,6 +89,7 @@
 											</button>
 										</td>
 									</tr>
+									
 									<script>
 										function printContent(el) {
 											var restorepage = document.body.innerHTML;

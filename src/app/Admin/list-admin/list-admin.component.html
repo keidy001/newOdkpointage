@@ -44,6 +44,7 @@
                                         </div>
                                     </div>
 									<div class="table-scrollable" id="example4">
+										<pagination-controls (pageChange)="p = $event"></pagination-controls>
                                         <header style="text-align: center;" ><strong>Liste des Administrateurs</strong> </header>
 									<table class="table table-hover table-checkable order-column full-width" >
 										<thead>
@@ -58,7 +59,7 @@
 												<th class="action"> Action </th>
 											</tr>
 										</thead>
-										<tbody *ngFor="let admin of listAdmin | filter:searchText" >
+										<tbody *ngFor="let admin of listAdmin | filter:searchText | paginate : {itemsPerPage : 5, currentPage: p}" >
 											<tr class="odd gradeX" *ngIf="admin.supprimer==0" >
 												<td class="user-circle-img">
 														<img src="../../../assets/images/odk_icon.png" width="50px" alt="">
@@ -69,8 +70,8 @@
 												<td class="center"><span routerLink="/detailAdmin/{{admin.id}}">{{admin.email}}</span></td>
 												<td class="center"><span routerLink="/detailAdmin/{{admin.id}}">{{admin.profile.libelle}}</span></td>
 												<td class="td">
-													<span *ngIf="admin.etat==='ACTIVER'"><img title="ACTIVER" src="../../../assets/images/puissance.png" width="40px" alt=""> </span>
-													<span *ngIf="admin.etat==='DESACTIVER'"><img title="DESACTIVER" src="../../../assets/images/puissance1.png" width="40px" alt=""> </span>
+													<span *ngIf="admin.etat==='ACTIVER'"><img title="ACTIVER" src="../../../assets/images/puissance.png" width="30px" alt=""> </span>
+													<span *ngIf="admin.etat==='DESACTIVER'"><img title="DESACTIVER" src="../../../assets/images/puissance1.png" width="30px" alt=""> </span>
 													
 													</td>
 												<td class="td">

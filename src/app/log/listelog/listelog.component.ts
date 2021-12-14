@@ -17,6 +17,7 @@ export class ListelogComponent implements OnInit {
   loginData:any;
   searchText: any;
   fileName = "listeAdmin.xlsx";
+  p: number = 1;
   constructor(
     private service : UsersService,
     private router : Router,

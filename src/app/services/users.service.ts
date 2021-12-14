@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse} from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,7 +21,8 @@ export class UsersService {
     }
 
     login2(login :String,password : String){
-      return this.http.get(this.url+"/utilisateurs/login?login="+login+"&password="+password)
+      return this.http.get(this.url+"/utilisateurs/login?login="+login+"&password="+password).
+      pipe(catchError(this.handleError));
     }
     //-------------------------------------------------------Admin  APi service --------------
 
@@ -137,4 +139,20 @@ afficherListPointage(){
 //--------------------------Pointage par utilisateur-----------------------------------------//
 pointageByUser(user:any){  
    return this.http.post(this.url+"/pointage/affichePointageByUser/", user); }
+
+
+   private handleError(httpError: HttpErrorResponse) {
+    if (httpError.error instanceof ErrorEvent) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error('An error occurred:', httpError.error.message);
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong.
+      console.error(
+        `Backend returned code ${httpError.status},`  +
+        `body was: ${httpError.error}`);
+    }
+    // Return an observable with a user-facing error message.
+    return throwError( httpError.error.message);
+  }
 }

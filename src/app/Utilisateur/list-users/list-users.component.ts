@@ -14,6 +14,7 @@ export class ListUsersComponent implements OnInit {
   listUsers: any;
   loginData:any;
   searchText:any;
+  p: number = 1;
  
 
   constructor(public service: UsersService,

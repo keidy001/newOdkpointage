@@ -50,7 +50,11 @@ loginInfo:any;
           
         } 
         
-      })
+      }, 
+      error=>{
+        this.toast.error(error);
+      }
+      )
     }
   })
 }

@@ -13,6 +13,8 @@ export class ListePromotionComponent implements OnInit {
   listPromotion:any =[];
   loginData : any;
   fileName = "listeAdmin.xlsx";
+  searchText:any;
+  p: number = 1;
 
   constructor(private serviceAdmin:UsersService,
     private router:Router,
