@@ -13,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./user-space.component.css']
 })
 export class UserSpaceComponent implements OnInit {
-  listUser: any
+  listUser: any ;
   loginData : any;
   fileName = "listeAdmin.xlsx";
   searchText: any;
@@ -31,11 +31,14 @@ export class UserSpaceComponent implements OnInit {
     }else if(this.loginData.genre == "FEMME"){
       this.toast.success("BIENVENUE Mme " + this.loginData.nom)
     }
-
-    this.service.afficherListPointage().subscribe(
+    let user = {
+        id:this.loginData.id,
+        Type:this.loginData.Type
+    }
+    console.log(user);
+    this.service.pointageByUser(user).subscribe(
       (data)=>{
         console.log(data);
-        console.log(this.loginData);
         this.listUser = data
       }
     )

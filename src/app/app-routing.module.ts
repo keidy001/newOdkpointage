@@ -28,6 +28,7 @@ import { DetailPromotionComponent } from './promotion/detail-promotion/detail-pr
 import { AdminGuard } from './admin.guard';
 import { LoginGuard } from './login.guard';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { CorbeilleComponent } from './corbeille/corbeille.component';
 
 
 
@@ -60,6 +61,7 @@ const routes: Routes = [
   { path: 'userPromotion/:id', component:UserPromotionComponent,canActivate:[GuardGuard]},
   { path: 'groupe', component:GroupeComponent, canActivate:[GuardGuard]},
   { path: 'userProfile',component:UserProfileComponent, canActivate:[GuardGuard]},
+  { path: 'corbeille', component:CorbeilleComponent, canActivate:[AdminGuard]},
   { path: '**', redirectTo: '/login', pathMatch:'full'},
  
 ];

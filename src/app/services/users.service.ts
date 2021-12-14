@@ -36,6 +36,10 @@ export class UsersService {
     deleteAdmin(id:any, userId:number){
         return this.http.delete(this.url+"/admin/supprimerAdmin/"+id+"&"+userId,{responseType:'text'});
     }
+    restoreAdmin(id:any, userId:number){
+      return this.http.delete(this.url+"/admin/restoreAdmin/"+id+"&"+userId,{responseType:'text'});
+  }
+
     detailAdmin(id:any){
       return this.http.get(this.url +"/admin/afficherAdminById/"+ id);
     }
@@ -58,7 +62,10 @@ export class UsersService {
     deleteUser(id:any, userId:number){
       return this.http.delete(this.url+"/utilisateurs/supprimerUser/"+id+"&"+userId,{responseType:'text'});
   }
+  restoreUtilisateur(id:any, userId:number){
+    return this.http.delete(this.url+"/utilisateurs/restoreUtilisateur/"+id+"&"+userId,{responseType:'text'});
 
+  }
   
   detailUser(id:any){
     return this.http.get(this.url +"/utilisateurs/afficher_by_id/"+ id);
@@ -123,5 +130,11 @@ getAlllog(){
 getLogParActeur(id : number,acteur: any){
   return this.http.get(this.url+"/log/afficherParActeur/"+id+"&"+acteur);
 }
-afficherListPointage(){   return this.http.get(this.url+("/pointage/listPointage")); }
+afficherListPointage(){   
+  return this.http.get(this.url+("/pointage/listPointage")); }
+
+
+//--------------------------Pointage par utilisateur-----------------------------------------//
+pointageByUser(user:any){  
+   return this.http.post(this.url+"/pointage/affichePointageByUser/", user); }
 }

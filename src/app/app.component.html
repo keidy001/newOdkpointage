@@ -160,12 +160,21 @@
                             <span class="title">Pointage</span>
                         </a>
                     </li>
+
                     <li class="nav-item" *ngIf="userRole == 1 || userRole == 2">
                         <a href="/log" class="nav-link nav-toggle">
                             <i class="material-icons">event</i>
                             <span class="title">Log</span>
                         </a>
                     </li>
+
+                    <li class="nav-item" *ngIf="userRole == 1 ">
+                        <a href="/corbeille" class="nav-link nav-toggle">
+                            <i class="material-icons">event</i>
+                            <span class="title">Corbeille</span>
+                        </a>
+                    </li>
+                    <!-- Apprenant button -->
                     <li class="nav-item" *ngIf="userRole == 'APPRENANT'">
                         <a href="/userSpace" class="nav-link nav-toggle">
                           <i class="material-icons">description</i>

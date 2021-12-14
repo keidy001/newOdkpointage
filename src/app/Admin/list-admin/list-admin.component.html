@@ -9,16 +9,17 @@
 									<div class="row p-b-20">
 										<div class="col-md-6 col-sm-6 col-6">
 											<div class="btn-group">
-												<a href="/addAdmin" id="addRow" class="btn btn-info">
+												<a href="/addAdmin" id="addRow" class="btn btn-warning">
 													Ajouter  <i class="fa fa-plus"></i>
 												</a>
 											</div>
 										</div>
 										<div class="col-md-6 col-sm-6 col-6">
 											<div class="btn-group pull-right">
-												<a class="btn deepPink-bgcolor  btn-outline dropdown-toggle" data-toggle="dropdown">Exporter
-													<i class="fa fa-angle-down"></i>
-												</a>
+												<a class="btn btn-warning  btn-outline dropdown-toggle"
+                                                    data-toggle="dropdown">Exporter
+                                                   <i class="fa fa-angle-down"></i>
+                                                </a>
 												<ul class="dropdown-menu pull-right">
 													<li>
 														<a onclick="window.print()">
@@ -57,8 +58,8 @@
 												<th class="action"> Action </th>
 											</tr>
 										</thead>
-										<tbody >
-											<tr class="odd gradeX" *ngFor="let admin of listAdmin | filter:searchText"  >
+										<tbody *ngFor="let admin of listAdmin | filter:searchText" >
+											<tr class="odd gradeX" *ngIf="admin.supprimer==0" >
 												<td class="user-circle-img">
 														<img src="../../../assets/images/odk_icon.png" width="50px" alt="">
 												</td>
@@ -68,10 +69,10 @@
 												<td class="center"><span routerLink="/detailAdmin/{{admin.id}}">{{admin.email}}</span></td>
 												<td class="center"><span routerLink="/detailAdmin/{{admin.id}}">{{admin.profile.libelle}}</span></td>
 												<td class="td">
-													<span *ngIf="admin.etat==='DESACTIVER'" style="background-color: red; color: white; padding: 3px; border-radius: 3px;">{{admin.etat}} </span>
-                                                    <span *ngIf="admin.etat==='ACTIVER'" style="background-color: rgb(0, 255, 213); color: white; padding: 3px; border-radius: 3px;">{{admin.etat}} </span>
-                                                    
-												</td>
+													<span *ngIf="admin.etat==='ACTIVER'"><img title="ACTIVER" src="../../../assets/images/puissance.png" width="40px" alt=""> </span>
+													<span *ngIf="admin.etat==='DESACTIVER'"><img title="DESACTIVER" src="../../../assets/images/puissance1.png" width="40px" alt=""> </span>
+													
+													</td>
 												<td class="td">
 													<a  class="btn btn-tbl-edit btn-xs" routerLink="/updateAdmin/{{admin.id}}">
 														<i class="fa fa-pencil"></i>

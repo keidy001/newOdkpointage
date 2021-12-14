@@ -39,6 +39,8 @@ import { AddPromotionComponent } from './promotion/add-promotion/add-promotion.c
 import { DetailPromotionComponent } from './promotion/detail-promotion/detail-promotion.component';
 import { DetailPointageComponent } from './PointageAdministrateur/detail-pointage/detail-pointage.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { OrderModule } from 'ngx-order-pipe';
+import { CorbeilleComponent } from './corbeille/corbeille.component';
 
 
 
@@ -73,6 +75,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     GroupeComponent,
     DetailPointageComponent,
     UserProfileComponent,
+    CorbeilleComponent,
     
 
  
@@ -82,7 +85,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-   
+    OrderModule,
     ReactiveFormsModule,
     Ng2SearchPipeModule,
     BrowserAnimationsModule,
