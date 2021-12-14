@@ -19,6 +19,7 @@ export class AddPromotionComponent implements OnInit {
   formgroup: FormGroup;
   userngForm: NgForm;
   submitted= false;
+  liste: any;
 
 
   constructor( 
@@ -36,7 +37,9 @@ export class AddPromotionComponent implements OnInit {
       dateFin: ['', Validators.required],
       horaireDebutJournee: ['', Validators.required],
       horaireFinJournee: ['', Validators.required],
-      nom: ['', Validators.required]
+      nom: ['', Validators.required],
+      // nombreFemmes: ['', Validators.required],
+      // nombreHommes: ['', Validators.required],
 
       //confirmPassword: ['', Validators.required],
       //acceptTerms: [false, Validators.requiredTrue] //Checkbox For accept conditions 
@@ -63,6 +66,19 @@ export class AddPromotionComponent implements OnInit {
     if (this.formgroup.invalid) {
         return;
     }
+    
+    if(new Date(fg.controls['dateDebut'].value) >= new Date(fg.controls['dateFin'].value)){
+      console.log("date non Valide");
+      this.toastr.error("La Date de début doit être inferieur à la Date de Fin !!!")
+      return;
+  } else if(fg.controls ['horaireDebutJournee'].value >= fg.controls ['horaireFinJournee'].value){
+
+    console.log("Heure non Valide");
+    this.toastr.error("L'Heure de début doit être inferieur à l'Heure de Fin !!!")
+    return;
+  }
+
+
 
     var obj: { [id: string]: any} = {};
      
@@ -75,10 +91,21 @@ export class AddPromotionComponent implements OnInit {
    this.service.addPromotion(fg.value).subscribe(
      
      (data)=>{
-      this.showToaster();
-       this.router.navigateByUrl("/listPromotion");
+      if (data==="nom"){
+        console.log("okkkyess");
+        this.toastr.error("Ce nom existe déja ");
+      }
+      
+      else{
+        this.router.navigateByUrl("/listPromotion");
+        console.log("helle ++++++++++++", data);
+      }
+
+      // this.showToaster();
+      //  this.router.navigateByUrl("/listPromotion");
      
-       console.log("hello world" +data);         
+      //  console.log(data);
+              
      }
    )
     
@@ -86,5 +113,11 @@ export class AddPromotionComponent implements OnInit {
   logOut(){
     localStorage.removeItem('isLogin');
   this.router.navigateByUrl('/');
+}
+listpromo(){
+this.service.getAllPromotions().subscribe((data)=>{
+  console.log(data)
+  return this.liste=data
+})
 }
 }

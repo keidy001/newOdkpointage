@@ -100,11 +100,26 @@ export class AddUsersComponent implements OnInit {
    this.service.addUsers(fg.value).subscribe(
      
      (data)=>{
-       this.router.navigateByUrl("/listUsers");
-       this.showToast();
-       console.log("hello world" +data);      
+      if(data==="email"){
+        console.log("incorrect email");
+        this.toast.error("Cet email existe déja ");
+
+      }else if (data==="telephone"){
+        console.log("incorrect telephone");
+        this.toast.error("Ce téléphone existe déja ");
+
+      }else if (data==="login"){
+        console.log("incorrect login");
+        this.toast.error("Ce login existe déja ");
+      }
+
+      else{
+        this.router.navigateByUrl("/listAdmins");
+        console.log("helle ++++++++++++", data);
+      }
 
      }
+
    )
     
   }
