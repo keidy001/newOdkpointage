@@ -70,7 +70,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="genre">Genre</label>
-                                    <select id="genre" style="padding-right: 410px; padding-bottom: 8px;" formControlName="genre"
+                                    <select id="genre" style="padding-right: 492px; padding-bottom: 10px;  border-color: darkgrey;" formControlName="genre"
                                         [ngClass]="{ 'is-invalid': submitted && f.genre.errors }">
                                         <option></option>
                                         <option value="HOMME">HOMME</option>
@@ -117,7 +117,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="etat">Etat</label>
-                                    <select id="inputState" style="padding-right: 388px; padding-bottom: 8px;" formControlName="etat"
+                                    <select id="inputState" style="padding-right: 470px; padding-bottom: 10px;  border-color: darkgrey;" formControlName="etat"
                                         [ngClass]="{ 'is-invalid': submitted && f.etat.errors }">
                                         <option></option>
                                         <option value="ACTIVER">Activer</option>
@@ -133,7 +133,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="Type">Type Utilisateur</label>
-                                    <select id="Type" style="padding-right: 388px; padding-bottom: 8px;" formControlName="Type" [(ngModel)]="Type"
+                                    <select id="Type" style="padding-right: 462px; padding-bottom: 10px; border-color: darkgrey;" formControlName="Type" [(ngModel)]="Type"
                                         [ngClass]="{ 'is-invalid': submitted && f.Type.errors }">
                                         <option></option>
                                         <option value="FORMATEUR">FORMATEUR</option>
@@ -152,8 +152,8 @@
                         <div class="form-row">
                             <div class="col-md-6" *ngIf="Type=='APPRENANT' ">
                                 <div class="form-group">
-                                    <label for="promotion">Promotion</label>
-                                    <select id="promotion" style="padding-right: 378px; padding-bottom: 8px;" formControlName="promotion">
+                                    <label for="promotion">Promotion</label><br>
+                                    <select id="promotion" style="padding-right: 465px; padding-bottom: 10px; border-color: darkgrey;" formControlName="promotion">
                                         <option></option>
                                         <option *ngFor="let promo of promotions" value="{{promo.id}}">{{promo.nom}}
                                         </option>

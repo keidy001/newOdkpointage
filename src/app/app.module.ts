@@ -42,7 +42,12 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { OrderModule } from 'ngx-order-pipe';
 import { CorbeilleComponent } from './corbeille/corbeille.component';
 import { NgxPaginationModule } from 'ngx-pagination'; 
-
+import {TableModule} from 'primeng/table';
+import {ToastModule} from 'primeng/toast';
+import {CalendarModule} from 'primeng/calendar';
+import {SliderModule} from 'primeng/slider';
+import {MultiSelectModule} from 'primeng/multiselect';
+import {MenuItem} from 'primeng/api';
 
 
 
@@ -91,7 +96,13 @@ import { NgxPaginationModule } from 'ngx-pagination';
     Ng2SearchPipeModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    NgxPaginationModule
+    NgxPaginationModule,
+    TableModule,
+    ToastModule,
+    CalendarModule,
+    SliderModule,
+    MultiSelectModule
+  
     
     
 

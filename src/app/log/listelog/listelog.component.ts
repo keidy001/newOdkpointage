@@ -13,6 +13,7 @@ import * as printJS from 'print-js';
   styleUrls: ['./listelog.component.css']
 })
 export class ListelogComponent implements OnInit {
+  loading: boolean =true;
   listlogs : any;
   loginData:any;
   searchText: any;
