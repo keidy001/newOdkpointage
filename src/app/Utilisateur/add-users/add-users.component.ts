@@ -114,7 +114,7 @@ export class AddUsersComponent implements OnInit {
       }
 
       else{
-        this.router.navigateByUrl("/listAdmins");
+        this.router.navigateByUrl("/listUsers");
         console.log("helle ++++++++++++", data);
       }
 
