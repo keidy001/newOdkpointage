@@ -55,7 +55,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="profile">Profile</label><br>
-                                        <select id="inputStat" style="padding-right: 455px; padding-bottom: 10px; border-color: darkgrey;"  formControlName="profile" [ngClass]="{ 'is-invalid': submitted && f.profile.errors }">
+                                        <select id="inputStat" style="padding-right: 76%; border-radius: 5px; padding-bottom: 10px; border-color: darkgrey;"  formControlName="profile" [ngClass]="{ 'is-invalid': submitted && f.profile.errors }">
                                             <option></option>
                                             <option value="1">SuperAdmin</option>
                                             <option value="2">Admin</option>
@@ -99,7 +99,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="genre">Genre</label><br>
-                                        <select id="inputState" style="padding-right: 488px; padding-bottom: 10px;  border-color: darkgrey;" formControlName="genre"  [ngClass]="{ 'is-invalid': submitted && f.genre.errors }">
+                                        <select id="inputState" style="padding-right: 82%; border-radius: 5px; padding-bottom: 10px;  border-color: darkgrey;" formControlName="genre"  [ngClass]="{ 'is-invalid': submitted && f.genre.errors }">
                                             <option></option>
                                             <option value="HOMME">Homme</option>
                                             <option value="FEMME">Femme</option>
@@ -110,10 +110,10 @@
                                     </div>
                                 </div>
     
-                                <div class="col-md-6">
+                                <div class="col-md-6" id="etat">
                                     <div class="form-group">
                                         <label for="etat">Etat</label><br>
-                                        <select id="inputState" style="padding-right: 468px; padding-bottom: 10px;  border-color: darkgrey;"  formControlName="etat" [ngClass]="{ 'is-invalid': submitted && f.etat.errors }">
+                                        <select id="inputState" style="padding-right: 79%; border-radius: 5px; padding-bottom: 10px;  border-color: darkgrey;"  formControlName="etat" [ngClass]="{ 'is-invalid': submitted && f.etat.errors }">
                                             <option></option><br>
                                             <option value="ACTIVER">Activer</option>
                                             <option value="DESACTIVER">Désactiver</option>

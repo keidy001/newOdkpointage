@@ -69,8 +69,8 @@
                         <div class="form-row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="genre">Genre</label>
-                                    <select id="genre" style="padding-right: 492px; padding-bottom: 10px;  border-color: darkgrey;" formControlName="genre"
+                                    <label for="genre">Genre</label><br>
+                                    <select id="genre" style="padding-right: 83%; border-radius: 5px; padding-bottom: 10px;  border-color: darkgrey;" formControlName="genre"
                                         [ngClass]="{ 'is-invalid': submitted && f.genre.errors }">
                                         <option></option>
                                         <option value="HOMME">HOMME</option>
@@ -116,8 +116,8 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="etat">Etat</label>
-                                    <select id="inputState" style="padding-right: 470px; padding-bottom: 10px;  border-color: darkgrey;" formControlName="etat"
+                                    <label for="etat">Etat</label><br>
+                                    <select style="padding-right: 78%;border-radius: 5px; padding-bottom: 10px; border-color: darkgrey;"  formControlName="etat"
                                         [ngClass]="{ 'is-invalid': submitted && f.etat.errors }">
                                         <option></option>
                                         <option value="ACTIVER">Activer</option>
@@ -132,8 +132,8 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="Type">Type Utilisateur</label>
-                                    <select id="Type" style="padding-right: 462px; padding-bottom: 10px; border-color: darkgrey;" formControlName="Type" [(ngModel)]="Type"
+                                    <label for="Type">Type Utilisateur</label><br>
+                                    <select id="Type" style="padding-right: 78%;border-radius: 5px; padding-bottom: 10px; border-color: darkgrey;" formControlName="Type" [(ngModel)]="Type"
                                         [ngClass]="{ 'is-invalid': submitted && f.Type.errors }">
                                         <option></option>
                                         <option value="FORMATEUR">FORMATEUR</option>
@@ -153,7 +153,7 @@
                             <div class="col-md-6" *ngIf="Type=='APPRENANT' ">
                                 <div class="form-group">
                                     <label for="promotion">Promotion</label><br>
-                                    <select id="promotion" style="padding-right: 465px; padding-bottom: 10px; border-color: darkgrey;" formControlName="promotion">
+                                    <select id="promotion" style="padding-right: 78%px; padding-bottom: 10px; border-color: darkgrey;" formControlName="promotion">
                                         <option></option>
                                         <option *ngFor="let promo of promotions" value="{{promo.id}}">{{promo.nom}}
                                         </option>
